@@ -13,5 +13,3 @@ class CategoryController extends Controller
         return view('pages.category.index', compact('categories'));
     }
 }
-
-

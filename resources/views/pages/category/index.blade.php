@@ -17,7 +17,7 @@
                 </div>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Categories</a></div>
+                    <div class="breadcrumb-item"><a href="#">Category</a></div>
                     <div class="breadcrumb-item">All Category</div>
                 </div>
             </div>
@@ -25,31 +25,19 @@
                 {{-- <div class="row">
                     <div class="col-12">
                         @include('layouts.alert')
-                    </div> --}}
-                {{-- </div>
-                <h2 class="section-title">Categories</h2> --}}
-                {{-- <p class="section-lead">
-                    You can manage all Category, such as editing, deleting and more.
-                </p> --}}
+                    </div>
+                </div> --}}
+
 
 
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="card">
-                            {{-- <div class="card-header">
-                                <h4>All Posts</h4> --}}
-                            </div>
+
                             <div class="card-body">
-                                {{-- <div class="float-left">
-                                    <select class="form-control selectric">
-                                        <option>Action For Selected</option>
-                                        <option>Move to Draft</option>
-                                        <option>Move to Pending</option>
-                                        <option>Delete Pemanently</option>
-                                    </select>
-                                </div> --}}
+
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('category.index') }}">
+                                    <form method="GET" action="{{ route('user.index') }}">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="name">
                                             <div class="input-group-append">
@@ -66,26 +54,16 @@
                                         <tr>
 
                                             <th>Name</th>
-                                            {{-- <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Roles</th> --}}
+
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
-                                        @foreach ($categories  as $category)
+                                        @foreach ($categories as $category)
                                             <tr>
 
                                                 <td>{{ $category->name }}
                                                 </td>
-                                                {{-- <td>
-                                                    {{ $user->email }}
-                                                </td>
-                                                <td>
-                                                    {{ $user->phone }}
-                                                <td>
-                                                    {{ $user->roles }}
-                                                </td>
-                                                </td> --}}
+
                                                 <td>{{ $category->created_at }}</td>
                                                 <td>
                                                     <div class="d-flex justify-content-center">
@@ -95,8 +73,8 @@
                                                             Edit
                                                         </a>
 
-                                                        <form action="{{ route('category.destroy', $category->id) }}" method="POST"
-                                                            class="ml-2">
+                                                        <form action="{{ route('category.destroy', $category->id) }}"
+                                                            method="POST" class="ml-2">
                                                             <input type="hidden" name="_method" value="DELETE" />
                                                             <input type="hidden" name="_token"
                                                                 value="{{ csrf_token() }}" />
